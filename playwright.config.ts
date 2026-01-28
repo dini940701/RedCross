@@ -13,6 +13,8 @@ export default defineConfig({
   workers: process.env.CI ? 10 : 5,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
+    ['html'],
+    ['allure-playwright'],
     ['playwright-html', { 
       testFolder: 'tests',
       title: 'Playwright HTML Report',
@@ -25,8 +27,6 @@ export default defineConfig({
       minifyAssets: true,
       startServer: true,
     }],
-    ['html'],
-    ['allure-playwright']
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
