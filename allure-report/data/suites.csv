@@ -1,4 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","89151","Verify the Product Header and Image Count","Google Chrome","2026-01-28","broken","2026-01-28","","pdp.spec.ts","",""
-"","89499","Search for an product","Google Chrome","2026-01-28","broken","2026-01-28","","homePage.spec.ts","",""
-"","88918","Search for an product","Google Chrome","2026-01-28","broken","2026-01-28","","srp.spec.ts","",""
