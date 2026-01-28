@@ -1,11 +1,11 @@
-import { Page,Locator } from "@playwright/test";
-import { ElementUtil } from "../Utilities/ElementUtil.js";
-import { PDP } from "../POM/PDP.js";
+import { Page,Locator } from '@playwright/test';
+import { ElementUtil } from '../Utilities/ElementUtil.js';
+import { PDP } from '../POM/PDP.js';
 
 export class SRP {
     private readonly page:Page;
     private readonly eleUtil:ElementUtil;
-    private readonly resultCount:Locator
+    private readonly resultCount:Locator;
 
 
     constructor(page:Page) {

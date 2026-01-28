@@ -1,7 +1,6 @@
-import { Page,Locator } from "@playwright/test";
-import { ElementUtil } from "../Utilities/ElementUtil.js";
-import { HomePage } from "./HomePage.js";
-import { base } from "@faker-js/faker";
+import { Page,Locator } from '@playwright/test';
+import { ElementUtil } from '../Utilities/ElementUtil.js';
+import { HomePage } from './HomePage.js';
 
 export class LoginPage{
 
@@ -20,17 +19,17 @@ export class LoginPage{
         this.page=page;
         this.eleUtil=new ElementUtil(page);
         this.accountIcon=page.locator('#user-panel');
-        this.loginLink=page.locator(`button[value='Login / Create Account']`);
-        this.userName=page.locator(`//input[@placeholder='Username (Email)']`);
-        this.nextButton=page.locator(`//button[text()='NEXT']`);
-        this.password=page.locator(`//input[@placeholder='Password']`);
-        this.loginButton=page.locator(`//button[text()='LOGIN']`);
+        this.loginLink=page.locator('button[value=\'Login / Create Account\']');
+        this.userName=page.locator('//input[@placeholder=\'Username (Email)\']');
+        this.nextButton=page.locator('//button[text()=\'NEXT\']');
+        this.password=page.locator('//input[@placeholder=\'Password\']');
+        this.loginButton=page.locator('//button[text()=\'LOGIN\']');
     }
 
     //Page Actions
 
     async goto(baseURL: string | undefined){
-        await this.page.goto(baseURL+'.org')
+        await this.page.goto(baseURL+'.org');
     }
 
     async doLogin(userName:string,password:string){

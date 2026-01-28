@@ -1,5 +1,5 @@
-import { Page,Locator } from "@playwright/test";
-import { ElementUtil } from "../Utilities/ElementUtil.js";
+import { Page,Locator } from '@playwright/test';
+import { ElementUtil } from '../Utilities/ElementUtil.js';
 
 export class PDP {
     private readonly page:Page;
@@ -8,7 +8,7 @@ export class PDP {
     private readonly imageCount:Locator;
     private readonly detailsTab:Locator;
     private metaData:Locator;
-    private prodMap=new Map<string,string|number|null>
+    private prodMap=new Map<string,string|number|null>;
 
     constructor(page:Page) {
         this.page=page;
@@ -20,7 +20,7 @@ export class PDP {
     }
 
     async getHeader(){
-        return await this.eleUtil.getInnerText(this.header)
+        return await this.eleUtil.getInnerText(this.header);
     }
 
     async getImageCount(){

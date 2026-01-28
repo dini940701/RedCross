@@ -1,4 +1,4 @@
-import { Locator,Page } from "@playwright/test";
+import { Locator,Page } from '@playwright/test';
 
 type flexibleLocator=string | Locator;
 
@@ -51,13 +51,13 @@ export class ElementUtil {
     async doubleClick(locator:flexibleLocator,index?:number,options?:{timeout?:number}):Promise<void>{
         await this.getLocator(locator,index).dblclick({
             timeout:options?.timeout || this.defaultTimeout
-        },)
+        },);
     }
 
-    async rightClick(locator:flexibleLocator,options?:{button?: "left" | "right" | "middle" | undefined}):Promise<void>{
+    async rightClick(locator:flexibleLocator,options?:{button?: 'left' | 'right' | 'middle' | undefined}):Promise<void>{
         await this.getLocator(locator).click({
             button:options?.button
-        })
+        });
     }
 
     async selectDropDown(locator:flexibleLocator,value:string,options?:{timeout?:number}):Promise<void>{
@@ -142,8 +142,10 @@ export class ElementUtil {
         }
     }
 
-    async waitForLoadState(state?:"load"|"domcontentloaded"|"networkidle"|undefined,options?:{timeout?:number}):Promise<void>{
-        await this.page.waitForLoadState(state)
+    async waitForLoadState(state?:'load'|'domcontentloaded'|'networkidle'|undefined,options?:{timeout?:number}):Promise<void>{
+        await this.page.waitForLoadState(state,{
+            timeout: options?.timeout || this.defaultTimeout
+        });
     }
 
     async sleep(timeout:number):Promise<void>{

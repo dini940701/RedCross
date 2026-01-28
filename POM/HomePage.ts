@@ -1,9 +1,9 @@
-import { Page,Locator } from "@playwright/test";
-import { ElementUtil } from "../Utilities/ElementUtil.js";
-import { SRP } from "../POM/SRP.js";
+import { Page,Locator } from '@playwright/test';
+import { ElementUtil } from '../Utilities/ElementUtil.js';
+import { SRP } from '../POM/SRP.js';
 
 export class HomePage {
-    readonly page:Page
+    readonly page:Page;
     private readonly eleUtil:ElementUtil;
     private readonly accountIcon:Locator;
     private readonly logoutLink:Locator; 
@@ -18,14 +18,14 @@ export class HomePage {
         this.eleUtil=new ElementUtil(page);
         this.accountIcon=page.locator('#user-panel');
         this.logoutLink=page.getByTitle('Go to: Logout');
-        this.searchBar=page.locator(`input[name='q']`);
+        this.searchBar=page.locator("input[name='q']");
         this.searchIcon=page.getByTitle('Search');
         this.productsLink=page.locator('.enableproducts');
         this.searchButton=page.locator('form.simple-search-action button.header-geo-submit');
     }
 
     async isUserLoggedIn(){
-        await this.eleUtil.doClick(this.accountIcon)
+        await this.eleUtil.doClick(this.accountIcon);
         return await this.eleUtil.isVisible(this.logoutLink);
     }
 
